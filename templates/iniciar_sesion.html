@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesión</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Iniciar Sesión</h2>
+        <form id="login-form" method="POST">
+            <label for="nombre_usuario">Nombre de usuario:</label>
+            <input type="text" id="nombre_usuario" name="nombre_usuario" required>
+
+            <label for="contrasena">Contraseña:</label>
+            <input type="password" id="contrasena" name="contrasena" required>
+
+            <button type="submit">Iniciar sesión</button>
+            <p>¿No tienes cuenta? <a href="{{ url_for('registrarse') }}">Regístrate aquí</a></p>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('login-form');
+
+        form.onsubmit = async (event) => {
+            event.preventDefault();  // Evita que la página se recargue
+
+            const formData = new FormData(form);
+            const response = await fetch('', {
+                method: 'POST',
+                body: formData
+            });
+
+            const result = await response.json();  // Obtener la respuesta JSON
+
+            // Mostrar el mensaje de SweetAlert2 en caso de error o éxito
+            if (result.status === 'error') {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: result.message
+                });
+            } else if (result.status === 'success') {
+                console.log('Redirigiendo a la página de bienvenida...');
+                window.location.href = '{{ url_for("bienvenida") }}';
+            }
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+/* General styles for body and container */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #74ebd5, #ACB6E5); /* Fondo degradado */
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    width: 100%;
+    max-width: 400px; /* Tamaño máximo */
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Labels and inputs styling */
+label {
+    margin-bottom: 8px;
+    color: #555;
+    font-size: 14px;
+    text-align: left;
+}
+
+input {
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #74ebd5; /* Borde en enfoque */
+    outline: none;
+}
+
+/* Button styling */
+button {
+    padding: 12px;
+    background-color: #2baa93;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #67dac2;
+}
+
+/* Link styling */
+a {
+    color: #6d4ff3;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #67dac2;
+}
+
+/* Error messages styling */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0;
+    color: red;
+    font-size: 14px;
+}
+
+/* Estilo del enlace de cerrar sesión como un botón */
+.btn-cerrar-sesion {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #a837e9; /* Rojo (puedes cambiar el color) */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-cerrar-sesion:hover {
+    background-color: #410ece; /* Rojo oscuro (puedes cambiar el color) */
+}
